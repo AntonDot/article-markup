@@ -25,50 +25,68 @@ body {
 }
 
 /* Шапка сайта */
-header {
-    background-color: var(--bg-color);
-    border-bottom: 1px solid #eeeeee;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Обнуление базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header-container {
-    max-width: 1100px;
+body {
+    font-family: "LucidaGrande", sans-serif;
+    background-color: #ffffff;
+}
+
+.header {
+    width: 100%;
+    padding-top: 38px; /* Отступ сверху по макету */
+    border-bottom: 1px solid #e0e0e0; /* Разделительная линия */
+}
+
+.container {
+    max-width: 1284px; /* Ограничивающая ширина из макета */
     margin: 0 auto;
-    padding: 0 25px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Центрирование элементов по вертикали */
+    padding-bottom: 10px; /* Небольшой отступ снизу для чистоты */
 }
 
 .logo {
-    font-family: var(--font-header);
-    font-size: 22px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-right: 60px; /* Расстояние от логотипа до меню */
 }
 
-nav ul {
+/* Стилизация списка меню */
+.nav-list {
     display: flex;
-    list-style: none;
-    gap: 30px;
+    list-style: none; /* Убираем буллеты (точки) */
+    gap: 35px; /* Расстояние между пунктами меню */
 }
 
-nav a {
-    font-family: var(--font-header);
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 14px;
-    font-weight: 600;
-    transition: opacity 0.2s;
+.nav-link {
+    text-decoration: none; /* Убираем дефолтное подчеркивание */
+    font-size: 24px;
+    line-height: 36px;
+    color: #333333; /* Основной цвет текста */
+    transition: 0.3s; /* Плавность для ховера */
 }
 
-nav a:hover {
-    opacity: 0.6;
+/* Состояние при наведении (как у "Проекты") */
+.nav-link.hover-effect:hover,
+.nav-link.hover-effect {
+    text-decoration: underline; /* Дизайнер показал подчеркивание при наведении */
+    color: #000000;
 }
+
+/* Активный пункт меню (Блог) */
+.nav-link.active {
+    color: #ff0000; /* Красный цвет для текущей страницы "Блог" */
+    font-weight: bold; /* Опционально, если на макете он жирнее */
+}
+
+
+
+
+
 
 /* Контент статьи */
 main {
