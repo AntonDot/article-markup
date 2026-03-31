@@ -1,5 +1,9 @@
-/* --- ОСНОВНЫЕ СТИЛИ (Desktop) --- */
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 :root {
     --font-header: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
     --font-body: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -25,7 +29,7 @@ body {
 }
 
 /* Шапка сайта */
-/* 1. Сброс всех стандартных отступов браузера */
+
 * {
     margin: 0;
     padding: 0;
@@ -36,11 +40,9 @@ body {
     font-family: "LucidaGrande", sans-serif;
 }
 
-/* 2. Контейнер для выравнивания по сетке */
 .container {
     max-width: 1284px;
     margin: 0 auto;
-    /* Убедитесь, что здесь нет padding-left, если хотите прижать к самому краю */
     padding: 0;
 }
 
@@ -57,35 +59,31 @@ body {
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* 5. Список меню (исправляем отступы) */
+/* 5. Список меню  */
 .nav-list {
     display: flex;
-    list-style: none; /* Убираем буллеты по заданию */
+    list-style: none;
 
-    /* ВАЖНО: обнуляем отступы самого списка */
     margin: 0;
     padding: 0;
 
-    /* Делаем вертикальные отступы внутри рамки */
     padding-top: 25px;
     padding-bottom: 25px;
 
-    gap: 45px; /* Расстояние между ссылками */
+    gap: 45px;
 }
 
 .nav-link {
     font-size: 24px;
     color: #333333;
-    text-decoration: none; /* Убираем дефолтное подчеркивание */
+    text-decoration: none;
 }
 
-/* Эффект наведения (как у "Проекты") */
 .nav-link.hover-effect:hover,
 .nav-link.hover-effect {
-    text-decoration: underline; /* Показываем подчеркивание */
+    text-decoration: underline;
 }
 
-/* Активный пункт (Блог) */
 .nav-link.active {
     color: #ff0000;
 }
@@ -97,7 +95,7 @@ body {
 
 /* Контент статьи */
 main {
-    max-width: 800px; /* Ширина колонки текста по макету */
+    max-width: 800px;
     margin: 60px auto;
     padding: 0 20px;
 }
@@ -118,12 +116,12 @@ p {
 }
 
 main h1:first-of-type {
-    font-size: 42px; /* можно изменить по желанию */
+    font-size: 42px;
 }
 
-/* Все остальные h1 внутри main */
+
 main h1:not(:first-of-type) {
-    font-size: 34px; /* меньший размер */
+    font-size: 34px;
 }
 
 /* Работа с изображениями */
@@ -171,7 +169,43 @@ code {
     h2 { font-size: 24px; }
     p { font-size: 18px; }
 
+    .content {
+        padding: 40px 20px;
+    }
+
+    .content h1 {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .content p {
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
     .article-image {
         margin: 25px 0;
+    }
+    .nav-list {
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: flex-start;
+
+        padding: 20px 0;
+    }
+
+    .nav-link {
+        font-size: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .logo-block {
+        padding: 20px 0;
     }
 }
