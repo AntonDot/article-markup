@@ -1,8 +1,141 @@
-/* Тут пиши основные стили */
+/* --- ОСНОВНЫЕ СТИЛИ (Desktop) --- */
 
+:root {
+    --font-header: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    --font-body: Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-code: "Courier New", monospace;
 
+    --text-color: #222222;
+    --bg-color: #ffffff;
+    --gray-bg: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Шапка сайта */
+header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-header);
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    font-family: var(--font-header);
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+/* Контент статьи */
+main {
+    max-width: 800px; /* Ширина колонки текста по макету */
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-header);
+    color: #000;
+    margin-bottom: 25px;
+}
+
+h1 { font-size: 48px; line-height: 1.1; font-weight: 800; }
+h2 { font-size: 32px; margin-top: 50px; }
+
+p {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+/* Работа с изображениями */
+.article-image {
+    width: 100%;
+    height: auto;
+    margin: 40px 0;
+    display: block;
+}
+
+/* Блоки кода */
+pre {
+    background: var(--gray-bg);
+    padding: 25px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+code {
+    font-family: var(--font-code);
+    font-size: 16px;
+    color: #d14;
+}
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ (≤800px) --- */
 @media (max-width: 800px) {
-/* Тут пиши стили для мобилки.
-    Стили применятся только когда страничка будет ≤800px шириной
- */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    main {
+        margin: 30px auto;
+    }
+
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    p { font-size: 18px; }
+
+    .article-image {
+        margin: 25px 0;
+    }
 }
