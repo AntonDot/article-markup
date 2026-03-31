@@ -102,12 +102,21 @@ h1, h2, h3 {
     margin-top: 55px;
 }
 
-h1 { font-size: 48px; line-height: 1.1; font-weight: 800; }
+h1 { font-size: 42px; line-height: 1.1; font-weight: 800; }
 h2 { font-size: 32px; margin-top: 50px; }
 
 p {
     margin-bottom: 25px;
     font-size: 20px;
+}
+
+main h1:first-of-type {
+    font-size: 42px; /* можно изменить по желанию */
+}
+
+/* Все остальные h1 внутри main */
+main h1:not(:first-of-type) {
+    font-size: 34px; /* меньший размер */
 }
 
 /* Работа с изображениями */
@@ -130,7 +139,8 @@ pre {
 code {
     font-family: var(--font-code);
     font-size: 16px;
-    color: #d14;
+    color: #000000;
+    background-color: #f0f0f0;
 }
 
 /* --- МОБИЛЬНАЯ ВЕРСИЯ (≤800px) --- */
