@@ -25,7 +25,7 @@ body {
 }
 
 /* Шапка сайта */
-/* Обнуление базовых стилей */
+/* 1. Сброс всех стандартных отступов браузера */
 * {
     margin: 0;
     padding: 0;
@@ -34,53 +34,60 @@ body {
 
 body {
     font-family: "LucidaGrande", sans-serif;
-    background-color: #ffffff;
 }
 
-.header {
-    width: 100%;
-    padding-top: 38px; /* Отступ сверху по макету */
-    border-bottom: 1px solid #e0e0e0; /* Разделительная линия */
-}
-
+/* 2. Контейнер для выравнивания по сетке */
 .container {
-    max-width: 1284px; /* Ограничивающая ширина из макета */
+    max-width: 1284px;
     margin: 0 auto;
-    display: flex;
-    align-items: center; /* Центрирование элементов по вертикали */
-    padding-bottom: 10px; /* Небольшой отступ снизу для чистоты */
+    /* Убедитесь, что здесь нет padding-left, если хотите прижать к самому краю */
+    padding: 0;
 }
 
-.logo {
-    margin-right: 60px; /* Расстояние от логотипа до меню */
+/* 3. Блок логотипа */
+.logo-block {
+    padding-top: 38px;
+    padding-bottom: 30px;
 }
 
-/* Стилизация списка меню */
+/* 4. Навигация с рамками */
+.nav {
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 5. Список меню (исправляем отступы) */
 .nav-list {
     display: flex;
-    list-style: none; /* Убираем буллеты (точки) */
-    gap: 35px; /* Расстояние между пунктами меню */
+    list-style: none; /* Убираем буллеты по заданию */
+
+    /* ВАЖНО: обнуляем отступы самого списка */
+    margin: 0;
+    padding: 0;
+
+    /* Делаем вертикальные отступы внутри рамки */
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    gap: 45px; /* Расстояние между ссылками */
 }
 
 .nav-link {
-    text-decoration: none; /* Убираем дефолтное подчеркивание */
     font-size: 24px;
-    line-height: 36px;
-    color: #333333; /* Основной цвет текста */
-    transition: 0.3s; /* Плавность для ховера */
+    color: #333333;
+    text-decoration: none; /* Убираем дефолтное подчеркивание */
 }
 
-/* Состояние при наведении (как у "Проекты") */
+/* Эффект наведения (как у "Проекты") */
 .nav-link.hover-effect:hover,
 .nav-link.hover-effect {
-    text-decoration: underline; /* Дизайнер показал подчеркивание при наведении */
-    color: #000000;
+    text-decoration: underline; /* Показываем подчеркивание */
 }
 
-/* Активный пункт меню (Блог) */
+/* Активный пункт (Блог) */
 .nav-link.active {
-    color: #ff0000; /* Красный цвет для текущей страницы "Блог" */
-    font-weight: bold; /* Опционально, если на макете он жирнее */
+    color: #ff0000;
 }
 
 
